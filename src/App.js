@@ -29,7 +29,7 @@ function App() {
       .then((res) => res.json())
        // we pick the first currency in the data.rates array
       .then((data) => {
-        const initialCurrency = Object.keys(data.rates)[0];
+        const initialCurrency = Object.keys(data.rates)[111];
         currencySelector([data.base, ...Object.keys(data.rates)]);
         setFromCurrency(data.base);
         setToCurrency(initialCurrency);
@@ -56,17 +56,23 @@ function App() {
   }
 
   return (
-    <>
-      <h1>Converter Form</h1>
+    <div className="App">
+      <header className="App-header">
+        <div className="container">
+      <h3>Crypto Converter</h3>
       {/* pass currency state as prop*/}
+      
       <CurrencyRow
+     
         currencyOptions={currencyOptions}
         selectedCurrency={fromCurrency}
         onChangeCurrency={(e) => setFromCurrency(e.target.value)}
         onChangeAmount={handleFromAmountChange}
         amount={fromAmount}
       />
-      <div className="equals">=</div>
+      <div className="equals">
+      
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAuXRgPg6lcFiZtFOTSb8iiIInNuWiew0Yhw&usqp=CAU" width={20} height={20}></img></div>
 
       <CurrencyRow
         currencyOptions={currencyOptions}
@@ -75,7 +81,9 @@ function App() {
         onChangeAmount={handleToAmountChange}
         amount={toAmount}
       />
-    </>
+      </div>
+      </header>
+    </div>
   );
 }
 
