@@ -58,6 +58,9 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <div className="company">
+          <img src="https://neptunemutual.com/neptune-mutual.svg"></img>
+        </div>
         <div className="container">
       <h3>Crypto Converter</h3>
       {/* pass currency state as prop*/}

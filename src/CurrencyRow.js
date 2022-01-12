@@ -16,16 +16,19 @@ export default function CurrencyRow(props) {
         className="input"
         value={amount}
         onChange={onChangeAmount}
-        min="0.01"
-		step="0.01"
+        min="0.001"
+		step="0.001"
       />
+       <div className="dropdown-box">
       <select value={selectedCurrency} onChange={onChangeCurrency}>
+         
         {currencyOptions.map((option) => (
           <option key={{option}+{option}} value={option}>
             {option}
           </option>
         ))}
       </select>
+      </div>
     </div>
   );
 }
